@@ -8,6 +8,7 @@ import java.util.List;
 @Repository
 public class CarDaoImpl implements CarDao {
 
+
     private static final List<Car> listCar;
 
     static {
