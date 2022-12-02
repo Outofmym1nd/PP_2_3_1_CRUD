@@ -28,6 +28,6 @@ public class CarController {
 
         model.addAttribute("listCar",
                 (count == null || count >= 5) ? listCar : getSomeCar(listCar, count));
-        return "/cars";
+        return "cars";
     }
 }
