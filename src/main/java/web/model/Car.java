@@ -1,6 +1,4 @@
-package web.entity;
-
-import java.util.List;
+package web.model;
 
 public class Car {
 
@@ -9,22 +7,10 @@ public class Car {
     private String model;
     private int horsePower;
 
-    private Car(String type, String model, int horsePower) {
+    public Car(String type, String model, int horsePower) {
         this.type = type;
         this.model = model;
         this.horsePower = horsePower;
-    }
-
-    public static Car createCar(String type, String model, int horsePower) {
-        return new Car(type, model, horsePower);
-    }
-
-    public static List<Car> createListCar(Car... car) {
-        return List.of(car);
-    }
-
-    public static List<Car> getSomeCar(List<Car> listCar, int limit) {
-        return listCar.stream().limit(limit).toList();
     }
 
     public String getType() {
