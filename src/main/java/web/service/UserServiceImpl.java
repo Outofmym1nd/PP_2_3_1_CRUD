@@ -19,9 +19,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
-    public void saveUser(User user) {
-        userDao.saveUser(user);
+    public User getUser(long id) {
+        return userDao.getUser(id);
     }
 
     @Override
@@ -30,19 +29,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(long id) {
-        return userDao.getUser(id);
-    }
-
-    @Override
     @Transactional
-    public void removeUserById(long id) {
-        userDao.removeUserById(id);
+    public void saveUser(User user) {
+        userDao.saveUser(user);
     }
 
     @Override
     @Transactional
     public void editUser(User user, long id) {
         userDao.editUser(user, id);
+    }
+
+    @Override
+    @Transactional
+    public void removeUserById(long id) {
+        userDao.removeUserById(id);
     }
 }

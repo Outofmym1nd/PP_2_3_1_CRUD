@@ -7,13 +7,13 @@ import java.util.List;
 public interface UserDao {
 
 
-    void saveUser(User user);
-
-    void removeUserById(long id);
+    User getUser(long id);
 
     List<User> getAllUsers();
 
-    User getUser(long id);
+    void saveUser(User user);
 
     void editUser(User user, Long id);
+
+    void removeUserById(long id);
 }

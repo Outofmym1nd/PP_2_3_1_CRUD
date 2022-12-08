@@ -18,6 +18,11 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public User getUser(long id) {      // Long or long - What's the difference in this case?
+        return entityManager.find(User.class, id);
+    }
+
+    @Override
     public List<User> getAllUsers() {
         return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
     }
@@ -28,17 +33,12 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void removeUserById(long id) {
-        entityManager.remove(getUser(id));
-    }
-
-    @Override
-    public User getUser(long id) {      // Long or long - What's the difference in this case?
-        return entityManager.find(User.class, id);
-    }
-
-    @Override
     public void editUser(User updatedUser, Long id) {
         entityManager.merge(updatedUser);
+    }
+
+    @Override
+    public void removeUserById(long id) {
+        entityManager.remove(getUser(id));
     }
 }
